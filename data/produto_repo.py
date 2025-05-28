@@ -10,7 +10,7 @@ def criar_tabela():
         return cursor.rowcount > 0
     
 
-def inserir(produto: Produto) -> Optional[int]:
+def inserir(produto: Produto) -> Optional[int]: # esse método retorna dois resultados: o id do produto inserido ou None se o insert estiver errado
     with get_connection() as conn:
         cursor = conn.cursor()
         cursor.execute(INSERIR, (
